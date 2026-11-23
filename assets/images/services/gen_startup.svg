@@ -1,0 +1,20 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <defs>
+    <filter id="badge-sh-gen_startup.svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+    <linearGradient id="bg-gen_startup.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <!-- Card Background with Accent Top Border -->
+  <rect x="5" y="4" width="110" height="92" rx="10" fill="url(#bg-gen_startup.svg)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#badge-sh-gen_startup.svg)"/>
+  <path d="M15 4 L105 4" stroke="#f97316" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Vector Emblem -->
+    <circle cx="60" cy="46" r="24" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+  <path d="M46 54 L60 36 L74 54 Z" fill="#f97316"/>
+  <circle cx="60" cy="44" r="3" fill="#ffffff"/>
+  <text x="60" y="65" font-family="'Arial Black', Arial, sans-serif" font-size="8" font-weight="900" fill="#ea580c" text-anchor="middle">STARTUP</text>
+  <text x="60" y="76" font-family="Arial, sans-serif" font-size="6.5" font-weight="bold" fill="#15803d" text-anchor="middle">INDIA DPIIT</text>
+</svg>

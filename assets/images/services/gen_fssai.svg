@@ -1,0 +1,20 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <defs>
+    <filter id="badge-sh-gen_fssai.svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+    <linearGradient id="bg-gen_fssai.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <!-- Card Background with Accent Top Border -->
+  <rect x="5" y="4" width="110" height="92" rx="10" fill="url(#bg-gen_fssai.svg)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#badge-sh-gen_fssai.svg)"/>
+  <path d="M15 4 L105 4" stroke="#ea580c" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Vector Emblem -->
+    <rect x="34" y="32" width="52" height="32" rx="5" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="60" y="54" font-family="'Brush Script MT', 'Segoe Script', cursive, sans-serif" font-size="20" font-weight="bold" fill="#ea580c" text-anchor="middle">fssai</text>
+  <circle cx="74" cy="40" r="2" fill="#16a34a"/>
+  <rect x="34" y="68" width="52" height="12" rx="3" fill="#c2410c"/>
+  <text x="60" y="77" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">FOOD LICENSE</text>
+</svg>

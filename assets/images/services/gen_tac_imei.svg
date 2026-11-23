@@ -1,0 +1,25 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <defs>
+    <filter id="badge-sh-gen_tac_imei.svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+    <linearGradient id="bg-gen_tac_imei.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <!-- Card Background with Accent Top Border -->
+  <rect x="5" y="4" width="110" height="92" rx="10" fill="url(#bg-gen_tac_imei.svg)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#badge-sh-gen_tac_imei.svg)"/>
+  <path d="M15 4 L105 4" stroke="#0f172a" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Vector Emblem -->
+    <rect x="40" y="30" width="40" height="34" rx="4" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+  <!-- Barcode -->
+  <line x1="46" y1="36" x2="46" y2="48" stroke="#0f172a" stroke-width="2"/>
+  <line x1="51" y1="36" x2="51" y2="48" stroke="#0f172a" stroke-width="1"/>
+  <line x1="55" y1="36" x2="55" y2="48" stroke="#0f172a" stroke-width="3"/>
+  <line x1="61" y1="36" x2="61" y2="48" stroke="#0f172a" stroke-width="1.5"/>
+  <line x1="66" y1="36" x2="66" y2="48" stroke="#0f172a" stroke-width="2"/>
+  <line x1="71" y1="36" x2="71" y2="48" stroke="#0f172a" stroke-width="1"/>
+  <text x="60" y="59" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#0f172a" text-anchor="middle">IMEI &#8226; TAC</text>
+  <text x="60" y="78" font-family="Arial, sans-serif" font-size="6.5" fill="#475569" text-anchor="middle">DEVICE ALLOCATION</text>
+</svg>

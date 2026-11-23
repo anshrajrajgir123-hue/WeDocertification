@@ -1,0 +1,5 @@
+# robots.txt for WeDo Certification & Services
+User-agent: *
+Allow: /
+
+Sitemap: https://wedocertification.com/sitemap.xml

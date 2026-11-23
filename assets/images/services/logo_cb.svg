@@ -1,0 +1,15 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 118" width="144" height="118">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <!-- Hexagon Outer Border -->
+  <polygon points="72,4 136,36 136,82 72,114 8,82 8,36" fill="#ffffff" stroke="#4338ca" stroke-width="3" filter="url(#shadow)"/>
+  <!-- Hexagon Inner Border -->
+  <polygon points="72,9 130,38 130,80 72,109 14,80 14,38" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <!-- Inner Logo Content -->
+    <circle cx="72" cy="59" r="28" fill="none" stroke="#4338ca" stroke-width="2"/>
+  <text x="72" y="63" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#4338ca" text-anchor="middle">CB</text>
+  <text x="72" y="76" font-family="Arial, sans-serif" font-size="6.5" font-weight="bold" fill="#3730a3" text-anchor="middle">SCHEME</text>
+</svg>

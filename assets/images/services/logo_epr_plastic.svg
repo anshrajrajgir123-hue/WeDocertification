@@ -1,0 +1,15 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 118" width="144" height="118">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <!-- Hexagon Outer Border -->
+  <polygon points="72,4 136,36 136,82 72,114 8,82 8,36" fill="#ffffff" stroke="#059669" stroke-width="3" filter="url(#shadow)"/>
+  <!-- Hexagon Inner Border -->
+  <polygon points="72,9 130,38 130,80 72,109 14,80 14,38" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <!-- Inner Logo Content -->
+    <path d="M72 36 L86 58 L78 58 L78 72 L66 72 L66 58 L58 58 Z" fill="#059669"/>
+  <text x="72" y="82" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#059669" text-anchor="middle">PLASTIC</text>
+  <text x="72" y="52" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">&#9851;</text>
+</svg>

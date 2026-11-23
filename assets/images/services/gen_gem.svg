@@ -1,0 +1,19 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <defs>
+    <filter id="badge-sh-gen_gem.svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+    <linearGradient id="bg-gen_gem.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <!-- Card Background with Accent Top Border -->
+  <rect x="5" y="4" width="110" height="92" rx="10" fill="url(#bg-gen_gem.svg)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#badge-sh-gen_gem.svg)"/>
+  <path d="M15 4 L105 4" stroke="#2563eb" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Vector Emblem -->
+    <circle cx="60" cy="46" r="24" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <polygon points="60,34 63,42 71,42 65,47 67,55 60,50 53,55 55,47 49,42 57,42" fill="#f59e0b"/>
+  <text x="60" y="65" font-family="'Arial Black', Arial, sans-serif" font-size="12" font-weight="900" fill="#1e40af" text-anchor="middle">GeM</text>
+  <text x="60" y="76" font-family="Arial, sans-serif" font-size="6.5" font-weight="bold" fill="#1e3a8a" text-anchor="middle">GOVT MARKETPLACE</text>
+</svg>

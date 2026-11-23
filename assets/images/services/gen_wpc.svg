@@ -1,0 +1,20 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <defs>
+    <filter id="badge-sh-gen_wpc.svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+    <linearGradient id="bg-gen_wpc.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <!-- Card Background with Accent Top Border -->
+  <rect x="5" y="4" width="110" height="92" rx="10" fill="url(#bg-gen_wpc.svg)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#badge-sh-gen_wpc.svg)"/>
+  <path d="M15 4 L105 4" stroke="#0284c7" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Vector Emblem -->
+    <circle cx="60" cy="62" r="5" fill="#0284c7"/>
+  <path d="M48 52 A 16 16 0 0 1 72 52" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M40 43 A 26 26 0 0 1 80 43" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M32 34 A 36 36 0 0 1 88 34" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="60" y="78" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#0369a1" text-anchor="middle">WPC &#8226; ETA</text>
+</svg>

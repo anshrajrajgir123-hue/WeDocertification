@@ -1,0 +1,17 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 118" width="144" height="118">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <!-- Hexagon Outer Border -->
+  <polygon points="72,4 136,36 136,82 72,114 8,82 8,36" fill="#ffffff" stroke="#0284c7" stroke-width="3" filter="url(#shadow)"/>
+  <!-- Hexagon Inner Border -->
+  <polygon points="72,9 130,38 130,80 72,109 14,80 14,38" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <!-- Inner Logo Content -->
+    <circle cx="72" cy="68" r="4" fill="#0284c7"/>
+  <path d="M60 56 A 16 16 0 0 1 84 56" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M52 46 A 26 26 0 0 1 92 46" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M44 36 A 36 36 0 0 1 100 36" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="72" y="80" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#0369a1" text-anchor="middle">WPC &#8226; ETA</text>
+</svg>

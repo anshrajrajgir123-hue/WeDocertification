@@ -1,0 +1,23 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <defs>
+    <filter id="badge-sh-gen_toys.svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+    <linearGradient id="bg-gen_toys.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <!-- Card Background with Accent Top Border -->
+  <rect x="5" y="4" width="110" height="92" rx="10" fill="url(#bg-gen_toys.svg)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#badge-sh-gen_toys.svg)"/>
+  <path d="M15 4 L105 4" stroke="#ec4899" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Vector Emblem -->
+    <rect x="40" y="42" width="40" height="28" rx="4" fill="#fdf2f8" stroke="#ec4899" stroke-width="2"/>
+  <circle cx="53" cy="36" r="10" fill="#fbcfe8" stroke="#ec4899" stroke-width="1.5"/>
+  <circle cx="50" cy="34" r="1.5" fill="#831843"/>
+  <circle cx="56" cy="34" r="1.5" fill="#831843"/>
+  <circle cx="68" cy="32" r="6" fill="#fde047"/>
+  <circle cx="70" cy="38" r="4" fill="#67e8f9"/>
+  <text x="60" y="58" font-family="Arial, sans-serif" font-size="7.5" font-weight="bold" fill="#be185d" text-anchor="middle">BIS TOYS</text>
+  <text x="60" y="66" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#9d174d" text-anchor="middle">IS 9873</text>
+</svg>

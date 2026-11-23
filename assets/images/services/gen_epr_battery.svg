@@ -1,0 +1,20 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <defs>
+    <filter id="badge-sh-gen_epr_battery.svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+    <linearGradient id="bg-gen_epr_battery.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <!-- Card Background with Accent Top Border -->
+  <rect x="5" y="4" width="110" height="92" rx="10" fill="url(#bg-gen_epr_battery.svg)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#badge-sh-gen_epr_battery.svg)"/>
+  <path d="M15 4 L105 4" stroke="#0d9488" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Vector Emblem -->
+    <rect x="46" y="32" width="28" height="34" rx="4" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <rect x="54" y="28" width="12" height="4" fill="#0d9488"/>
+  <path d="M60 38 L55 50 L61 50 L57 60" fill="none" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="34" y="68" width="52" height="12" rx="3" fill="#0f766e"/>
+  <text x="60" y="77" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">EPR BATTERY</text>
+</svg>

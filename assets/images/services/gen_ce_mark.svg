@@ -1,0 +1,19 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <defs>
+    <filter id="badge-sh-gen_ce_mark.svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+    <linearGradient id="bg-gen_ce_mark.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <!-- Card Background with Accent Top Border -->
+  <rect x="5" y="4" width="110" height="92" rx="10" fill="url(#bg-gen_ce_mark.svg)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#badge-sh-gen_ce_mark.svg)"/>
+  <path d="M15 4 L105 4" stroke="#2563eb" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Vector Emblem -->
+    <path d="M52 32 A 18 18 0 1 0 52 68" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+  <path d="M78 32 A 18 18 0 1 0 78 68" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+  <line x1="60" y1="50" x2="78" y2="50" stroke="#2563eb" stroke-width="3"/>
+  <text x="60" y="78" font-family="Arial, sans-serif" font-size="7.5" font-weight="bold" fill="#1e40af" text-anchor="middle">CE CONFORMITY</text>
+</svg>

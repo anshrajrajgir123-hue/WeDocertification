@@ -1,0 +1,22 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <defs>
+    <filter id="badge-sh-gen_rdso.svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+    <linearGradient id="bg-gen_rdso.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <!-- Card Background with Accent Top Border -->
+  <rect x="5" y="4" width="110" height="92" rx="10" fill="url(#bg-gen_rdso.svg)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#badge-sh-gen_rdso.svg)"/>
+  <path d="M15 4 L105 4" stroke="#b91c1c" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Vector Emblem -->
+    <circle cx="60" cy="48" r="25" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+  <line x1="44" y1="48" x2="76" y2="48" stroke="#b91c1c" stroke-width="3"/>
+  <line x1="48" y1="42" x2="48" y2="54" stroke="#b91c1c" stroke-width="2"/>
+  <line x1="60" y1="42" x2="60" y2="54" stroke="#b91c1c" stroke-width="2"/>
+  <line x1="72" y1="42" x2="72" y2="54" stroke="#b91c1c" stroke-width="2"/>
+  <text x="60" y="65" font-family="'Arial Black', Arial, sans-serif" font-size="9" font-weight="bold" fill="#991b1b" text-anchor="middle">RDSO</text>
+  <text x="60" y="78" font-family="Arial, sans-serif" font-size="6.5" fill="#7f1d1d" text-anchor="middle">INDIAN RAILWAYS</text>
+</svg>

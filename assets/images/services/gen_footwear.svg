@@ -1,0 +1,19 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <defs>
+    <filter id="badge-sh-gen_footwear.svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+    <linearGradient id="bg-gen_footwear.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <!-- Card Background with Accent Top Border -->
+  <rect x="5" y="4" width="110" height="92" rx="10" fill="url(#bg-gen_footwear.svg)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#badge-sh-gen_footwear.svg)"/>
+  <path d="M15 4 L105 4" stroke="#3b82f6" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Vector Emblem -->
+    <path d="M38 56 C38 48 48 44 58 44 L64 36 L72 36 L72 46 L82 50 C86 52 86 58 84 62 L38 62 Z" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="38" y1="58" x2="84" y2="58" stroke="#ef4444" stroke-width="2"/>
+  <text x="60" y="74" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#1d4ed8" text-anchor="middle">BIS FOOTWEAR</text>
+  <text x="60" y="82" font-family="Arial, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">QCO COMPLIANCE</text>
+</svg>
