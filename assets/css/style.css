@@ -2011,3 +2011,40 @@ body.dark .why-icon-box {
   color: #022352 !important;
   line-height: 1 !important;
 }
+
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  header .wrap {
+    flex-wrap: wrap;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .dd {
+    width: 100%;
+  }
+
+  .hero .wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .wrap {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
