@@ -19,6 +19,29 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+app.get('/api/updates', (req, res) => {
+  res.json({
+    success: true,
+    updates: [
+      "BIS CRS new guidelines updated for electronics.",
+      "WPC ETA approval process simplified.",
+      "EPR Plastic & Battery compliance deadline extended."
+    ]
+  });
+});
+
+// POST API for Contact / Consultation Form
+app.post('/api/contact', (req, res) => {
+  const { name, email, phone, service } = req.body;
+
+  if (!name || !phone) {
+    return res.status(400).json({ success: false, message: "Name and Phone are required." });
+  }
+
+  console.log("New Lead Received:", { name, email, phone, service });
+  res.json({ success: true, message: "Request successfully received!" });
+});
+
 const PORT = 5000;
 
 app.listen(PORT, () => {
