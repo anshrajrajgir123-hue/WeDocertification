@@ -1845,6 +1845,62 @@ header {
   }
 }
 
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    padding: 0 14px !important;
+    width: 100% !important;
+  }
+
+  .topbar .wrap {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+  }
+
+  header .wrap {
+    min-height: 70px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .wordmark {
+    font-size: 24px !important;
+  }
+
+  h1 {
+    font-size: 26px !important;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 22px !important;
+  }
+
+  section {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  /* Side-by-side boxes ko ek ke neeche ek laane ke liye */
+  .grid, .row, [class*="grid"], [class*="row"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+}
+
 </style>
 
 <style id="wedo-refined-styles">
@@ -2411,8 +2467,8 @@ header {
 <body>
 <div class="topbar"><div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; font-size:13px; padding:7px 20px;">
   <span><span style="color:#5fd1bd; margin-right:6px;">📞</span> (+91) 99535 70505</span>
-  <span><span style="color:#5fd1bd; margin-right:6px;">✉</span> nishantsharma.wedo@gmail.com</span>
-  <span><span style="color:#5fd1bd; margin-right:6px;">📍</span> WeDo Certification &amp; Services Pvt. Ltd.</span>
+  <span><span style="color:#5fd1bd; margin-right:6px;">✉</span> info@wedocertification.com</span>
+  <span><span style="color:#5fd1bd; margin-right:6px;">📍</span> WeDo Certification &amp; Services.</span>
 </div></div>
 <header><div class="wrap header-wrap">
   <a class="logo" href="#top" aria-label="WeDo">
@@ -4058,7 +4114,7 @@ header {
           <div>
             <div class="ref-contact-label">EMAIL</div>
             <div class="ref-contact-desc">
-              <a href="mailto:nishantsharma.wedo@gmail.com">nishantsharma.wedo@gmail.com</a>
+              <a href="mailto:info@wedocertification.com">info@wedocertification.com</a>
               <a href="mailto:info@wedocertification.com">info@wedocertification.com</a>
             </div>
           </div>
