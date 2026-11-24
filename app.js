@@ -29,9 +29,31 @@ app.get('/api/updates', (req, res) => {
     ]
   });
 });
+const contactSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  phone: String,
+  service: String,
+  createdAt: { type: Date, default: Date.now },
+});
 
+const Contact = mongoose.model("Contact", contactSchema);
 // POST API for Contact / Consultation Form
 app.post('/api/contact', (req, res) => {
+  app.post("/api/contact", async (req, res) => {
+  try {
+    const { name, email, phone, service } = req.body;
+    if (!name || !phone) {
+      return res.status(400).json({ success: false, message: "Name and Phone are required." });
+    }
+    const newContact = new Contact({ name, email, phone, service });
+    await newContact.save();
+    res.status(201).json({ success: true, message: "Request successfully received!" });
+  } catch (error) {
+    console.error("Save Error:", error);
+    res.status(500).json({ success: false, message: "Something went wrong" });
+  }
+});
   const { name, email, phone, service } = req.body;
 
   if (!name || !phone) {
