@@ -4173,7 +4173,7 @@ img {
         <h3 class="ref-block-title">Quick Contact</h3>
         <div class="ref-title-bar"></div>
         
-        <form class="ref-quick-form" onsubmit="event.preventDefault(); const alertBox=document.getElementById('home-form-alert'); if(alertBox){alertBox.style.display='block'; setTimeout(()=>alertBox.style.display='none', 5000);} this.reset();">
+        <form class="ref-quick-form" id="quick-contact-form"></form>
           <div id="home-form-alert" style="display:none;background:#ecfdf5;border:1px solid #10b981;color:#065f46;border-radius:8px;padding:12px;font-size:13.5px;margin-bottom:12px;text-align:left;">
             <strong>✓ Enquiry Received!</strong> Our senior regulatory consultant will contact you within 2 hours.
           </div>
@@ -4768,6 +4768,47 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 </script>
+
+<script>
+  document.getElementById('quick-contact-form')?.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const fd = new FormData(this);
+    const code = fd.get('country_code') || '';
+    const rawPhone = fd.get('phone') || fd.get('mobile') || '';
+
+    const payload = {
+      name: fd.get('name'),
+      email: fd.get('email'),
+      phone: code ? ${code} ${rawPhone}.trim() : rawPhone,
+      service: fd.get('service') || fd.get('subject') || '',
+      message: fd.get('message') || ''
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        const alertBox = document.getElementById('home-form-alert');
+        if (alertBox) {
+          alertBox.style.display = 'block';
+          setTimeout(() => alertBox.style.display = 'none', 5000);
+        }
+        this.reset();
+      } else {
+        alert('Error: ' + (data.message || 'Data save nahi ho paya'));
+      }
+    } catch (err) {
+      alert('Server se connection nahi ho paya!');
+    }
+  });
+</script>
+</body>
+</html>
 
 
 
