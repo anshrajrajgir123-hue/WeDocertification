@@ -4777,57 +4777,6 @@ window.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
       const fd = new FormData(this);
-      const selects = this.querySelectorAll('select');
-
-      const name = fd.get('name') || this.querySelector('input[type="text"]')?.value || '';
-      const email = fd.get('email') || this.querySelector('input[type="email"]')?.value || '';
-      const code = fd.get('country_code') || fd.get('modal_country_code') || selects[0]?.value || '';
-      const rawPhone = fd.get('phone') || fd.get('mobile') || this.querySelector('input[type="tel"]')?.value || '';
-      const service = fd.get('service') || fd.get('subject') || selects[1]?.value || '';
-
-      const payload = {
-        name: name.trim(),
-        email: email.trim(),
-  
-        service: service.trim()
-      };
-
-      try {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        const data = await res.json();
-
-        if (res.ok && data.success) {
-          const alertBox = document.getElementById(alertId);
-          if (alertBox) {
-            alertBox.style.display = 'block';
-            setTimeout(() => { alertBox.style.display = 'none'; }, 5000);
-          }
-          this.reset();
-        } else {
-          alert('Error: ' + (data.message || 'Data save nahi ho paya'));
-        }
-      } catch (err) {
-        alert('Server se connection nahi ho paya!');
-      }
-    });
-  }
-
-  attachMongoForm('quick-contact-form', 'home-form-alert');
-  attachMongoForm('consultation-form', 'modal-form-alert');
-</script>
-
-<script>
-  function attachMongoForm(formId, alertId) {
-    const form = document.getElementById(formId);
-    if (!form) return;
-
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const fd = new FormData(this);
       const inputs = this.querySelectorAll('input');
       const selects = this.querySelectorAll('select');
 
