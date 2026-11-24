@@ -4295,7 +4295,7 @@ img {
         <p class="welcome-desc">Connect with senior regulatory engineers for custom roadmap, government fee schedule, and timeline estimates.</p>
       </div>
 
-      <form class="welcome-lead-form" onsubmit="event.preventDefault(); const alertBox=document.getElementById('modal-form-alert'); if(alertBox){alertBox.style.display='block';} setTimeout(()=>{ closeWelcomeModal(); }, 2500); this.reset();">
+      <form class="welcome-lead-form" id="consultation-form">
         <div id="modal-form-alert" style="display:none;background:#ecfdf5;border:1px solid #10b981;color:#065f46;border-radius:8px;padding:10px 14px;font-size:13.5px;margin-bottom:12px;text-align:left;">
           <strong>✓ Consultation Booked!</strong> Our senior regulatory advisor will call you within 2 hours.
         </div>
@@ -4770,42 +4770,54 @@ window.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <script>
-  document.getElementById('quick-contact-form')?.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const fd = new FormData(this);
-    const code = fd.get('country_code') || '';
-    const rawPhone = fd.get('phone') || fd.get('mobile') || '';
+  function attachMongoForm(formId, alertId) {
+    const form = document.getElementById(formId);
+    if (!form) return;
 
-    const payload = {
-      name: fd.get('name'),
-      email: fd.get('email'),
-      phone: code ? ${code} ${rawPhone}.trim() : rawPhone,
-      service: fd.get('service') || fd.get('subject') || '',
-      message: fd.get('message') || ''
-    };
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const fd = new FormData(this);
+      const selects = this.querySelectorAll('select');
 
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      const data = await res.json();
+      const name = fd.get('name') || this.querySelector('input[type="text"]')?.value || '';
+      const email = fd.get('email') || this.querySelector('input[type="email"]')?.value || '';
+      const code = fd.get('country_code') || fd.get('modal_country_code') || selects[0]?.value || '';
+      const rawPhone = fd.get('phone') || fd.get('mobile') || this.querySelector('input[type="tel"]')?.value || '';
+      const service = fd.get('service') || fd.get('subject') || selects[1]?.value || '';
 
-      if (res.ok && data.success) {
-        const alertBox = document.getElementById('home-form-alert');
-        if (alertBox) {
-          alertBox.style.display = 'block';
-          setTimeout(() => alertBox.style.display = 'none', 5000);
+      const payload = {
+        name: name.trim(),
+        email: email.trim(),
+  
+        service: service.trim()
+      };
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          const alertBox = document.getElementById(alertId);
+          if (alertBox) {
+            alertBox.style.display = 'block';
+            setTimeout(() => { alertBox.style.display = 'none'; }, 5000);
+          }
+          this.reset();
+        } else {
+          alert('Error: ' + (data.message || 'Data save nahi ho paya'));
         }
-        this.reset();
-      } else {
-        alert('Error: ' + (data.message || 'Data save nahi ho paya'));
+      } catch (err) {
+        alert('Server se connection nahi ho paya!');
       }
-    } catch (err) {
-      alert('Server se connection nahi ho paya!');
-    }
-  });
+    });
+  }
+
+  attachMongoForm('quick-contact-form', 'home-form-alert');
+  attachMongoForm('consultation-form', 'modal-form-alert');
 </script>
 </body>
 </html>
