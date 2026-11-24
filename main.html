@@ -4600,6 +4600,27 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 </script>
+<style>
+  /* Full Name, Email, Phone aur Message box mein bilkul Select Service jaisa border */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form input[type="number"],
+  form textarea,
+  form select {
+    border: 1px solid #94a3b8 !important;
+    border-radius: 8px !important;
+    background-color: #ffffff !important;
+  }
+
+  /* Box par click karne par dark border aayega */
+  form input:focus,
+  form textarea:focus,
+  form select:focus {
+    border-color: #1e293b !important;
+    outline: none !important;
+  }
+</style>
 
 
 
