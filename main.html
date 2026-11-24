@@ -4819,6 +4819,63 @@ window.addEventListener('DOMContentLoaded', () => {
   attachMongoForm('quick-contact-form', 'home-form-alert');
   attachMongoForm('consultation-form', 'modal-form-alert');
 </script>
+
+<script>
+  function attachMongoForm(formId, alertId) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const fd = new FormData(this);
+      const inputs = this.querySelectorAll('input');
+      const selects = this.querySelectorAll('select');
+
+      const name = (fd.get('name') || inputs[0]?.value || '').trim();
+      const email = (fd.get('email') || inputs[1]?.value || '').trim();
+      const code = (fd.get('country_code') || fd.get('modal_country_code') || selects[0]?.value || '').trim();
+      const rawPhone = (fd.get('phone') || fd.get('mobile') || inputs[2]?.value || '').trim();
+      const service = (fd.get('service') || fd.get('subject') || selects[1]?.value || '').trim();
+
+      if (!name || !rawPhone) {
+        alert('Please enter both Name and Phone number.');
+        return;
+      }
+
+      const payload = {
+        name,
+        email,
+        phone: code ? (code + ' ' + rawPhone) : rawPhone,
+        service
+      };
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          const alertBox = document.getElementById(alertId);
+          if (alertBox) {
+            alertBox.style.display = 'block';
+            setTimeout(() => { alertBox.style.display = 'none'; }, 5000);
+          }
+          this.reset();
+        } else {
+          alert('Error: ' + (data.message || 'Data save nahi ho paya'));
+        }
+      } catch (err) {
+        alert('Server se connection nahi ho paya!');
+      }
+    });
+  }
+
+  attachMongoForm('quick-contact-form', 'home-form-alert');
+  attachMongoForm('consultation-form', 'modal-form-alert');
+</script>
 </body>
 </html>
 
