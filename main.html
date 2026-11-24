@@ -4461,6 +4461,43 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 </style>
+<style>
+  /* Quick Contact form ke sabhi boxes mein clean border lagane ke liye */
+  footer form input,
+  footer form textarea,
+  footer form select {
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    padding: 10px 12px !important;
+    background-color: #ffffff !important;
+    box-sizing: border-box !important;
+  }
+
+  footer form input:focus,
+  footer form textarea:focus,
+  footer form select:focus {
+    border-color: #0d9488 !important;
+    outline: none !important;
+  }
+</style>
+
+<script>
+  /* Get Free Quote button par click karne par Registration Popup kholne ke liye */
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll("a, button");
+    buttons.forEach(function (btn) {
+      if (btn.textContent.trim().toLowerCase().includes("get free quote")) {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          const modal = document.getElementById("welcome-consultation-modal");
+          if (modal) {
+            modal.style.display = "flex";
+          }
+        });
+      }
+    });
+  });
+</script>
 
 
 
