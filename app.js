@@ -46,16 +46,26 @@ const contactSchema = new mongoose.Schema({
 });
 
 const Contact = mongoose.model("Contact", contactSchema);
-app.use(express.json()); // Middleware to parse JSON request bodies
-// POST API for Contact / Consultation Form
 
-  // POST API for Contact / Consultation Form
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// POST API for Contact / Consultation Form
 app.post("/api/contact", async (req, res) => {
   try {
-    const { name, email, phone, service } = req.body;
+    const body = req.body || {};
+    const name = body.name || body.fullName || body.full_name || "";
+    const email = body.email || "";
+    const phone = body.phone || body.modal_phone || body.mobile || body.phone_number || "";
+    const service = body.service || body.subject || "";
+
     if (!name || !phone) {
-      return res.status(400).json({ success: false, message: "Name and Phone are required." });
+      return res.status(400).json({
+        success: false,
+        message: "Name and Phone are required. Received: " + JSON.stringify(body)
+      });
     }
+
     const newContact = new Contact({ name, email, phone, service });
     await newContact.save();
     return res.status(201).json({ success: true, message: "Enquiry saved successfully!" });
