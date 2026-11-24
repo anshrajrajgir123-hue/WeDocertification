@@ -47,8 +47,9 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model("Contact", contactSchema);
 // POST API for Contact / Consultation Form
-app.post('/api/contact', (req, res) => {
-  app.post("/api/contact", async (req, res) => {
+
+  // POST API for Contact / Consultation Form
+app.post("/api/contact", async (req, res) => {
   try {
     const { name, email, phone, service } = req.body;
     if (!name || !phone) {
@@ -56,22 +57,13 @@ app.post('/api/contact', (req, res) => {
     }
     const newContact = new Contact({ name, email, phone, service });
     await newContact.save();
-    res.status(201).json({ success: true, message: "Request successfully received!" });
+    return res.status(201).json({ success: true, message: "Enquiry saved successfully!" });
   } catch (error) {
-    console.error("Save Error:", error);
-    res.status(500).json({ success: false, message: "Something went wrong" });
+    console.error("Contact save error:", error);
+    return res.status(500).json({ success: false, message: "Server error while saving contact." });
   }
 });
-  const { name, email, phone, service } = req.body;
-
-  if (!name || !phone) {
-    return res.status(400).json({ success: false, message: "Name and Phone are required." });
-  }
-
-  console.log("New Lead Received:", { name, email, phone, service });
-  res.json({ success: true, message: "Request successfully received!" });
-});
-
+  
 const PORT = 5000;
 
 app.listen(PORT, () => {
