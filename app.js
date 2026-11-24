@@ -46,6 +46,7 @@ const contactSchema = new mongoose.Schema({
 });
 
 const Contact = mongoose.model("Contact", contactSchema);
+app.use(express.json()); // Middleware to parse JSON request bodies
 // POST API for Contact / Consultation Form
 
   // POST API for Contact / Consultation Form
