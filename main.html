@@ -4621,6 +4621,41 @@ window.addEventListener('DOMContentLoaded', () => {
     outline: none !important;
   }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // "Trusted by Industry Leaders" wala section dhoondhna
+    const headings = document.querySelectorAll("h1, h2, h3, h4");
+    let clientSection = null;
+
+    headings.forEach(function (h) {
+      if (h.textContent.includes("Trusted by Industry Leaders")) {
+        clientSection = h.closest("section") || h.parentElement.parentElement;
+      }
+    });
+
+    if (!clientSection) return;
+
+    // Us section ke andar jitni bhi ghoomne (animate) wali lines hain unhe pakadna
+    const allElements = clientSection.querySelectorAll("*");
+    allElements.forEach(function (el) {
+      const style = window.getComputedStyle(el);
+      if (style.animationName && style.animationName !== "none") {
+        el.style.cursor = "pointer";
+
+        el.addEventListener("click", function (e) {
+          e.stopPropagation();
+          if (el.dataset.paused === "true") {
+            el.style.setProperty("animation-play-state", "running", "important");
+            el.dataset.paused = "false";
+          } else {
+            el.style.setProperty("animation-play-state", "paused", "important");
+            el.dataset.paused = "true";
+          }
+        });
+      }
+    });
+  });
+</script>
 
 
 
