@@ -4499,6 +4499,108 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 </script>
 
+<style>
+  /* 1. Quick Contact form ke boxes mein border */
+  footer form input,
+  footer form textarea,
+  footer form select {
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    padding: 10px 12px !important;
+    background-color: #ffffff !important;
+    box-sizing: border-box !important;
+  }
+
+  footer form input:focus,
+  footer form textarea:focus,
+  footer form select:focus {
+    border-color: #0d9488 !important;
+    outline: none !important;
+  }
+
+  /* 2. Mobile par About photo upar aur Popup size chhoti */
+  @media (max-width: 768px) {
+    #about .wrap.about {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 20px !important;
+    }
+
+    #about .wrap.about > img.photo {
+      order: -1 !important;
+      width: 100% !important;
+      height: auto !important;
+      max-width: 100% !important;
+    }
+
+    #welcome-consultation-modal {
+      padding: 12px !important;
+      align-items: center !important;
+    }
+
+    .welcome-modal-dialog {
+      width: 92% !important;
+      max-width: 340px !important;
+      max-height: 82vh !important;
+      overflow-y: auto !important;
+      border-radius: 14px !important;
+      margin: auto !important;
+    }
+
+    .welcome-modal-header { padding: 12px 14px !important; }
+    .welcome-modal-body { padding: 14px !important; }
+    .welcome-heading { font-size: 18px !important; line-height: 1.25 !important; margin: 4px 0 6px !important; }
+    .welcome-desc { font-size: 12px !important; line-height: 1.4 !important; margin-bottom: 10px !important; }
+    .welcome-field { margin-bottom: 8px !important; }
+    .welcome-input, .welcome-lead-form select { padding: 8px 12px !important; font-size: 13px !important; height: auto !important; }
+    .welcome-lead-form button[type="submit"] { padding: 10px 14px !important; font-size: 13px !important; }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // 3. Get Free Quote button par click karne par Registration Popup khulega
+    document.querySelectorAll("a, button").forEach(function (btn) {
+      if (btn.textContent.trim().toLowerCase().includes("get free quote")) {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          const modal = document.getElementById("welcome-consultation-modal");
+          if (modal) modal.style.display = "flex";
+        });
+      }
+    });
+
+    // 4. Sabhi WhatsApp buttons par aapka exact message type hokar aayega
+    const phone = "919953570505";
+    const message = "Hey WeDo!! I need certifications for my product.";
+    const waLink = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+    const waSelectors = [
+      'a[href*="wa.me"]',
+      'a[href*="whatsapp"]',
+      'a[title*="whatsapp" i]',
+      'a[aria-label*="whatsapp" i]',
+      'header a[href*="9953570505"]',
+      '[class*="whatsapp" i]',
+      '[class*="wa-" i]'
+    ].join(", ");
+
+    document.querySelectorAll(waSelectors).forEach(function (el) {
+      const href = el.getAttribute("href") || "";
+      if (href.startsWith("tel:")) return;
+      if (el.tagName === "A") {
+        el.setAttribute("href", waLink);
+        el.setAttribute("target", "_blank");
+        el.setAttribute("rel", "noopener noreferrer");
+      }
+      el.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.open(waLink, "_blank");
+      });
+    });
+  });
+</script>
+
 
 
 
