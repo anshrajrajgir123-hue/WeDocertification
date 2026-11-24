@@ -2,7 +2,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(process.env.MONGODB_URI || "mongodb+srv://wedocertifications_db_user:fZ071uL8XcJej3cK@wedocertification.vkojimi.mongodb.net/wedo?retryWrites=true&w=majority")
   .then(() => console.log("MongoDB Connected Successfully!"))
   .catch((err) => console.log("MongoDB Connection Error:", err));
 
