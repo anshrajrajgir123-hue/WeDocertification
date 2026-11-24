@@ -4393,6 +4393,74 @@ window.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+<style>
+  @media (max-width: 768px) {
+    /* 1. About section ki photo mobile par upar laane ke liye */
+    #about .wrap.about {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 20px !important;
+    }
+
+    #about .wrap.about > img.photo {
+      order: -1 !important;
+      width: 100% !important;
+      height: auto !important;
+      max-width: 100% !important;
+    }
+
+    /* 2. Mobile par Popup form ki size chhoti karne ke liye */
+    #welcome-consultation-modal {
+      padding: 12px !important;
+      align-items: center !important;
+    }
+
+    .welcome-modal-dialog {
+      width: 92% !important;
+      max-width: 340px !important;
+      max-height: 82vh !important;
+      overflow-y: auto !important;
+      border-radius: 14px !important;
+      margin: auto !important;
+    }
+
+    .welcome-modal-header {
+      padding: 12px 14px !important;
+    }
+
+    .welcome-modal-body {
+      padding: 14px !important;
+    }
+
+    .welcome-heading {
+      font-size: 18px !important;
+      line-height: 1.25 !important;
+      margin: 4px 0 6px !important;
+    }
+
+    .welcome-desc {
+      font-size: 12px !important;
+      line-height: 1.4 !important;
+      margin-bottom: 10px !important;
+    }
+
+    .welcome-field {
+      margin-bottom: 8px !important;
+    }
+
+    .welcome-input,
+    .welcome-lead-form select {
+      padding: 8px 12px !important;
+      font-size: 13px !important;
+      height: auto !important;
+    }
+
+    .welcome-lead-form button[type="submit"] {
+      padding: 10px 14px !important;
+      font-size: 13px !important;
+    }
+  }
+</style>
 
 
 
