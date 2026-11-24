@@ -2088,3 +2088,23 @@ body.dark .why-icon-box {
     display: none !important;
   }
 }
+
+@media (max-width: 768px) {
+  .about {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .about .photo-wrapper,
+  .about > div:has(img) {
+    order: -1 !important;
+    width: 100% !important;
+  }
+
+  .about img,
+  .about .photo {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
