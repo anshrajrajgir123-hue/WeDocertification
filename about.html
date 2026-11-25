@@ -10,44 +10,145 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="wrap">
-      <div class="topbar-left">
-        <span class="topbar-badge">About WeDo</span>
-        <span>Trusted Compliance Consultants Across India</span>
-      </div>
-      <div class="topbar-contact">
-        <a href="tel:+919953570505"><span>📞 Call:</span> <b>+91 99535 70505</b></a>
-        <a href="mailto:info@wedocertification.com"><span>✉️ Mail:</span> <b>info@wedocertification.com</b></a>
+
+<div class="topbar"><div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; font-size:13px; padding:7px 20px;">
+  <span><span style="color:#5fd1bd; margin-right:6px;">📞</span> (+91) 99535 70505</span>
+  <span><span style="color:#5fd1bd; margin-right:6px;">✉</span> info@wedocertification.com</span>
+  <span><span style="color:#5fd1bd; margin-right:6px;">📍</span> WeDo Certification &amp; Services.</span>
+</div></div>
+<header><div class="wrap header-wrap">
+  <a class="logo" href="main.html" aria-label="WeDo">
+    <img src="wedo-emblem.png" alt="WeDo Emblem" class="header-emblem-img">
+    <span class="header-brand-wedo">WeDo</span>
+  </a>
+  <button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">Menu</button>
+  <nav class="nav-links">
+    <a href="main.html" class="nav-link">Home</a>
+    <a href="main.html#about" class="nav-link">About</a>
+    
+    <!-- Services Mega Dropdown with Official Logos -->
+    <div class="mega">
+      <a href="javascript:void(0)" class="mega-trigger" tabindex="0">Services <span class="nav-arrow">&#9662;</span></a>
+      <div class="dd ref-mega-dd">
+        <!-- Col 1: BIS & COMPLIANCE SCHEMES (1-7) -->
+        <div class="mega-col">
+          <h5 class="mega-col-title">
+            <span class="mega-title-icon">🏛️</span> BIS &amp; CORE SCHEMES
+          </h5>
+          <div class="mega-links-list">
+            <a href="services/bis-crs-for-electronics-crs.html" class="mega-item">
+              <img src="assets/images/services/badge_bis_crs.png" alt="BIS - CRS Registration" class="mega-item-icon">
+              <span class="mega-item-text">BIS - CRS Registration</span>
+            </a>
+            <a href="services/bis-for-domestic-manufacturer-isi.html" class="mega-item">
+              <img src="assets/images/services/badge_bis_isi.png" alt="BIS - ISI Certification" class="mega-item-icon">
+              <span class="mega-item-text">BIS - ISI Certification</span>
+            </a>
+            <a href="services/bis-hallmark.html" class="mega-item">
+              <img src="assets/images/services/badge_bis_hallmark.png" alt="BIS - Hallmark" class="mega-item-icon">
+              <span class="mega-item-text">BIS - Hallmark</span>
+            </a>
+            <a href="services/bis-for-foreign-manufacturer-fmcs.html" class="mega-item">
+              <img src="assets/images/services/badge_bis_fmcs.png" alt="BIS - FMCS" class="mega-item-icon">
+              <span class="mega-item-text">BIS - FMCS</span>
+            </a>
+            <a href="services/wpc-eta-approval.html" class="mega-item">
+              <img src="assets/images/services/badge_wpc.png" alt="WPC Approval" class="mega-item-icon">
+              <span class="mega-item-text">WPC Approval</span>
+            </a>
+            <a href="services/bee-star-rating.html" class="mega-item">
+              <img src="assets/images/services/badge_bee.png" alt="BEE Approval" class="mega-item-icon">
+              <span class="mega-item-text">BEE Approval</span>
+            </a>
+            <a href="services/plastic-waste-epr.html" class="mega-item">
+              <img src="assets/images/services/gen_epr_waste.svg" alt="EPR - Plastic, Battery, Waste" class="mega-item-icon">
+              <span class="mega-item-text">EPR - Plastic, Battery, Waste</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: GLOBAL & TECHNICAL STANDARDS (8-14) -->
+        <div class="mega-col">
+          <h5 class="mega-col-title">
+            <span class="mega-title-icon">🔬</span> GLOBAL &amp; TECHNICAL STANDARDS
+          </h5>
+          <div class="mega-links-list">
+            <a href="services/g-mark-certification.html" class="mega-item">
+              <img src="assets/images/services/logo_g_mark.svg" alt="G-mark" class="mega-item-icon">
+              <span class="mega-item-text">G-mark</span>
+            </a>
+            <a href="services/ce-marking.html" class="mega-item">
+              <img src="assets/images/services/badge_ce_mark.png" alt="CE Certification" class="mega-item-icon">
+              <span class="mega-item-text">CE Certification</span>
+            </a>
+            <a href="services/tec-approval.html" class="mega-item">
+              <img src="assets/images/services/logo_tec.svg" alt="TEC Certification" class="mega-item-icon">
+              <span class="mega-item-text">TEC Certification</span>
+            </a>
+            <a href="services/gst-registration.html" class="mega-item">
+              <img src="assets/images/services/logo_gst.svg" alt="GST" class="mega-item-icon">
+              <span class="mega-item-text">GST</span>
+            </a>
+            <a href="services/msme-and-nsic-registration.html" class="mega-item">
+              <img src="assets/images/services/badge_msme_nsic.png" alt="MSME" class="mega-item-icon">
+              <span class="mega-item-text">MSME</span>
+            </a>
+            <a href="services/iso-certification.html" class="mega-item">
+              <img src="assets/images/services/logo_iso.svg" alt="ISO" class="mega-item-icon">
+              <span class="mega-item-text">ISO</span>
+            </a>
+            <a href="services/cdsco-md-registration-india.html" class="mega-item">
+              <img src="assets/images/services/logo_cdsco.svg" alt="CDSCO" class="mega-item-icon">
+              <span class="mega-item-text">CDSCO</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 3: CORPORATE, TRADE & CLEARANCES (15-21) -->
+        <div class="mega-col">
+          <h5 class="mega-col-title">
+            <span class="mega-title-icon">⚖️</span> CORPORATE, TRADE &amp; CLEARANCES
+          </h5>
+          <div class="mega-links-list">
+            <a href="services/fssai-license.html" class="mega-item">
+              <img src="assets/images/services/badge_fssai.png" alt="FSSAI" class="mega-item-icon">
+              <span class="mega-item-text">FSSAI</span>
+            </a>
+            <a href="services/legal-metrology-product-compliance.html" class="mega-item">
+              <img src="assets/images/services/badge_lmpc.png" alt="LMPC" class="mega-item-icon">
+              <span class="mega-item-text">LMPC</span>
+            </a>
+            <a href="services/rohs-compliance-and-approval.html" class="mega-item">
+              <img src="assets/images/services/badge_rohs.png" alt="RoHS" class="mega-item-icon">
+              <span class="mega-item-text">RoHS</span>
+            </a>
+            <a href="services/import-export-license-iec.html" class="mega-item">
+              <img src="assets/images/services/badge_iec.png" alt="IEC" class="mega-item-icon">
+              <span class="mega-item-text">IEC</span>
+            </a>
+            <a href="services/trademark-registration.html" class="mega-item">
+              <img src="assets/images/services/badge_trademark.png" alt="Trademark" class="mega-item-icon">
+              <span class="mega-item-text">Trademark</span>
+            </a>
+            <a href="services/make-in-india-mark.html" class="mega-item">
+              <img src="assets/images/services/badge_make_in_india.png" alt="Make In India" class="mega-item-icon">
+              <span class="mega-item-text">Make In India</span>
+            </a>
+            <a href="services/saso-saber.html" class="mega-item">
+              <img src="assets/images/services/logo_saso_saber.svg" alt="SASO, Saber" class="mega-item-icon">
+              <span class="mega-item-text">SASO, Saber</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Header -->
-  <header>
-    <div class="wrap">
-      <a class="logo" href="index.html" aria-label="WeDo">
-        <img src="wedo-emblem.png" alt="WeDo Emblem" class="header-emblem-img">
-        <span class="header-brand-wedo">WeDo</span>
-      </a>
-
-      <div class="nav-actions">
         
-        <button class="menu-btn" type="button" aria-expanded="false" aria-label="Open Navigation Menu">☰ Menu</button>
-      </div>
-
-      <nav>
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link active" href="about.html">About</a>
-        <a class="nav-link" href="services.html">Services</a>
-        <a class="nav-link" href="why-us.html">Why Us</a>
-        <a class="nav-link" href="blogs.html">Insights</a>
-        <a class="nav-link" href="contact.html">Contact</a>
-        <a class="btn sm" href="contact.html" style="color:#fff">Free Consultation</a>
-      </nav>
-    </div>
-  </header>
+    <a href="blogs.html" class="nav-link">Blogs</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a class="nav-btn-start" href="contact.html">Free Consultation</a>
+  </nav>
+</div></header>
 
   <main>
     <!-- Page Header -->
@@ -138,6 +239,7 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
