@@ -2144,3 +2144,29 @@ body.dark .why-icon-box {
     font-size: 13.5px !important;
   }
 }
+/* Fix Services Mega-Menu Hover Gap on Desktop/Laptop */
+.nav-item,
+.dropdown,
+.has-dropdown,
+li:has(.mega-menu),
+li:has(.dropdown-menu) {
+  position: relative;
+}
+
+.mega-menu,
+.dropdown-menu {
+  margin-top: 0 !important;
+  top: 100% !important;
+}
+
+/* Invisible bridge between Services link and Mega Menu so mouse never loses hover */
+.mega-menu::before,
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 0;
+  width: 100%;
+  height: 22px;
+  background: transparent;
+}
