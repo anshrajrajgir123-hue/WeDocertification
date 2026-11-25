@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static(__dirname));
 
 // Yahan change hua hai (Line 11)
-app.get(['/', '/index.html'], (req, res) => {
+app.get(['/', '/main.html'], (req, res) => {
   res.sendFile(__dirname + '/main.html');
 });
 
@@ -80,5 +80,6 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Backend running on http://localhost:${PORT}`);
 });
+
 
 
