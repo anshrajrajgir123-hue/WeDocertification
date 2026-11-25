@@ -249,3 +249,5 @@ document.addEventListener('DOMContentLoaded', () => {
     return div.innerHTML;
   }
 });
+
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('nav a,header a,.nav-link').forEach(a=>{const t=a.textContent.trim().toLowerCase();if(t.startsWith('services')){a.href='javascript:void(0)';const p=a.parentElement,m=p.querySelector('.mega-menu,.dropdown-menu,div');if(m){a.onclick=e=>{e.preventDefault();e.stopPropagation();const o=m.style.display==='block';m.style.display=o?'':'block';m.style.opacity=o?'':'1';m.style.visibility=o?'':'visible';};document.addEventListener('click',e=>{if(!p.contains(e.target))m.style.display='';});}}else if(t==='contact'||t==='contact us'){a.href='contact.html';}});});
