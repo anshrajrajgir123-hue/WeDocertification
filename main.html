@@ -4825,6 +4825,62 @@ window.addEventListener('DOMContentLoaded', () => {
   attachMongoForm('quick-contact-form', 'home-form-alert');
   attachMongoForm('consultation-form', 'modal-form-alert');
 </script>
+<script>
+(function () {
+  const blocked = ["why us", "insights"];
+
+  function removeBlockedItems() {
+    // Navigation aur dropdown se Why Us / Insights hatao
+    document.querySelectorAll(
+      'header a, nav a, header li, nav li, .dropdown, .submenu, .blog-dropdown, .blog-drop-menu'
+    ).forEach(function (el) {
+      const text = (el.textContent || "").replace(/[▾▼]/g, "").trim().toLowerCase();
+      const href = (el.getAttribute("href") || "").toLowerCase();
+
+      if (el.tagName === "A" &&
+          (text === "why us" || text === "insights" ||
+           /why-us|insights/.test(href))) {
+        const parent = el.closest("li");
+        if (parent) parent.remove();
+        else el.remove();
+      }
+    });
+
+    // Empty dropdown containers hatao, Blog link ko rehne do
+    document.querySelectorAll(".blog-drop-menu, .blog-dropdown").forEach(function (el) {
+      if (el.classList.contains("blog-drop-menu") && !el.querySelector("a")) {
+        el.remove();
+      }
+    });
+
+    // Why Us / Insights ke dedicated sections hatao
+    document.querySelectorAll("section, article").forEach(function (section) {
+      const heading = section.querySelector("h1,h2,h3,h4,h5");
+      if (!heading) return;
+
+      const title = heading.textContent.trim().toLowerCase();
+      if (blocked.includes(title)) section.remove();
+    });
+  }
+
+  function start() {
+    removeBlockedItems();
+
+    // Baad mein JavaScript se add hone wale menus bhi clean karo
+    const observer = new MutationObserver(removeBlockedItems);
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();
+</script>
 </body>
 </html>
 
