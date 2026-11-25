@@ -80,3 +80,60 @@ const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`Backend running on http://localhost:${PORT}`);
 });
+
+/* === SMOOTH SERVICES DROPDOWN & DISABLE NIGHT MODE === */
+document.addEventListener('DOMContentLoaded', function () {
+  // Force remove any saved dark mode preference
+  try {
+    localStorage.removeItem('theme');
+    localStorage.removeItem('darkMode');
+    localStorage.removeItem('nightMode');
+    document.documentElement.classList.remove('dark', 'dark-mode', 'night-mode');
+    document.body.classList.remove('dark', 'dark-mode', 'night-mode');
+  } catch (e) {}
+
+  // Find Services nav trigger and keep dropdown open on click/hover without page jump
+  const navLinks = document.querySelectorAll('nav a, header a, .nav-link');
+  navLinks.forEach(function (link) {
+    const label = (link.textContent || '').trim().toLowerCase();
+    if (label.startsWith('services')) {
+      const parent = link.closest('li, .nav-item, .dropdown, .has-dropdown') || link.parentElement;
+      const menu = parent ? parent.querySelector('.mega-menu, .dropdown-menu, .services-dropdown, div') : null;
+
+      if (menu) {
+        let closeTimer = null;
+
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const alreadyOpen = parent.classList.contains('is-open');
+          document.querySelectorAll('.is-open').forEach(el => el.classList.remove('is-open'));
+          if (!alreadyOpen) {
+            parent.classList.add('is-open');
+            menu.classList.add('is-open');
+          }
+        });
+
+        parent.addEventListener('mouseenter', function () {
+          clearTimeout(closeTimer);
+          parent.classList.add('is-open');
+          menu.classList.add('is-open');
+        });
+
+        parent.addEventListener('mouseleave', function () {
+          closeTimer = setTimeout(function () {
+            parent.classList.remove('is-open');
+            menu.classList.remove('is-open');
+          }, 260);
+        });
+      }
+    }
+  });
+
+  // Close dropdown only when clicking completely outside
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.is-open')) {
+      document.querySelectorAll('.is-open').forEach(el => el.classList.remove('is-open'));
+    }
+  });
+});
