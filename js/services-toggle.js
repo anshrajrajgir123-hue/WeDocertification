@@ -1,52 +1,50 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // 1. CSS ke hover ko band karo aur .mega-open class par menu dikhao (Laptop + Mobile dono ke liye)
-  const style = document.createElement("style");
-  style.textContent = `
-    .mega:hover .dd, .mega:focus-within .dd {
-      display: none !important;
-      opacity: 0 !important;
-      visibility: hidden !important;
-      pointer-events: none !important;
-    }
-    .mega.mega-open .dd {
-      display: grid !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-      pointer-events: auto !important;
-    }
-    @media (max-width: 900px) {
-      .mega.mega-open .dd {
-        display: block !important;
-      }
-    }
-    .mega .nav-arrow {
-      display: inline-block;
-      transition: transform 0.25s ease;
-    }
-    .mega.mega-open .nav-arrow {
-      transform: rotate(180deg);
-    }
-  `;
-  document.head.appendChild(style);
+(function () {
+  function initServicesMenu() {
+    var mega = document.querySelector('header .mega');
+    var trig = document.querySelector('header .mega-trigger');
+    if (!mega || !trig) return;
 
-  // 2. Services par tap/click karne par 3 columns khole aur dubara tap karne par band kare
-  document.querySelectorAll(".mega").forEach(mega => {
-    const trigger = mega.querySelector(".mega-trigger");
-    if (!trigger) return;
+    // Prevent duplicate handlers
+    if (trig.dataset.wdInit === '1') return;
+    trig.dataset.wdInit = '1';
 
-    trigger.addEventListener("click", (e) => {
+    // Click/tap to toggle
+    trig.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
-      mega.classList.toggle("mega-open");
+      mega.classList.toggle('is-open');
     });
-  });
 
-  // 3. Bahar kahin bhi tap/click karne par band ho jaye
-  document.addEventListener("click", (e) => {
-    document.querySelectorAll(".mega.mega-open").forEach(mega => {
+    // Clicks inside the dropdown: if a link is clicked, close the dropdown
+    var dd = mega.querySelector('.dd');
+    if (dd) {
+      dd.addEventListener('click', function (e) {
+        if (e.target.closest('a')) {
+          mega.classList.remove('is-open');
+        } else {
+          e.stopPropagation();
+        }
+      });
+    }
+
+    // Close when clicking anywhere outside
+    document.addEventListener('click', function (e) {
       if (!mega.contains(e.target)) {
-        mega.classList.remove("mega-open");
+        mega.classList.remove('is-open');
       }
     });
-  });
-});
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        mega.classList.remove('is-open');
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initServicesMenu);
+  } else {
+    initServicesMenu();
+  }
+})();

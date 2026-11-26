@@ -1,4 +1,221 @@
-nav .wedo-compact-box{display:none!important;width:265px!important;min-width:245px!important;max-width:92vw!important;padding:4px 0!important;background:#fff!important;border:1px solid #e2e8f0!important;border-radius:10px!important;box-shadow:0 12px 28px rgba(15,23,42,.15)!important;flex-direction:column!important;grid-template-columns:1fr!important;gap:0!important;z-index:9999!important}nav .wedo-compact-box.wedo-svc-open{display:flex!important}nav .wedo-compact-box.wedo-force-closed{display:none!important}@media(min-width:901px){nav .wedo-compact-box{position:absolute!important;top:100%!important;left:50%!important;transform:translateX(-50%)!important;right:auto!important}}@media(max-width:900px){nav .wedo-compact-box{position:static!important;transform:none!important;width:100%!important;box-shadow:none!important;margin:6px 0!important}}
-nav .wedo-cat-col{width:100%!important;border:none!important;padding:0!important;margin:0!important}nav .wedo-cat-head{font-size:13px!important;font-weight:600!important;color:#0f172a!important;padding:11px 14px!important;margin:0!important;cursor:pointer!important;display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:10px!important;text-align:left!important;border-bottom:1px solid #f1f5f9!important;text-transform:none!important}nav .wedo-cat-head>*{margin:0!important}nav .wedo-cat-col a{display:none!important}nav .wedo-cat-col.open a{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:8px!important;padding:8px 16px!important;font-size:13px!important;color:#334155!important;background:#f8fafc!important;border-bottom:1px solid #f1f5f9!important}nav .wedo-compact-box img{width:18px!important;height:18px!important;object-fit:contain!important;flex-shrink:0!important}nav .wedo-svc-trigger::after,nav .wedo-svc-trigger::before,nav .wedo-svc-trigger span,nav .wedo-svc-trigger svg{display:none!important}.wedo-hide-extra-card{display:none!important}
-header .nav-links *:hover .wedo-compact-box:not(.wedo-svc-open),header .wedo-compact-box:not(.wedo-svc-open){display:none!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important}header .wedo-compact-box.wedo-svc-open{display:flex!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}
-.wedo-hide-proc{display:none!important}
+/* ==========================================================================
+   WEDO SERVICES MEGA-MENU STYLES (DESKTOP 3-COL, MOBILE 1-COL, BULLETPROOF)
+   ========================================================================== */
+
+/* 1. Header & Position Context */
+header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: #ffffff !important;
+}
+
+header .wrap.header-wrap {
+  position: relative !important;
+}
+
+/* 2. Prevent Duplicate Arrow */
+.mega > a::after,
+.mega-trigger::after,
+header .mega > a::after,
+header .mega-trigger::after {
+  content: "" !important;
+  display: none !important;
+}
+
+header .mega-trigger .nav-arrow {
+  display: inline-block !important;
+  font-size: 11px !important;
+  margin-left: 4px !important;
+  transition: transform 0.25s ease !important;
+  vertical-align: middle !important;
+  color: #059669 !important;
+}
+
+header .mega.is-open .mega-trigger .nav-arrow {
+  transform: rotate(180deg) !important;
+}
+
+/* 3. Disable hover-based display so it ONLY opens on click/tap */
+.mega:hover .dd,
+.mega:focus-within .dd,
+header .mega:hover .dd,
+header .mega:focus-within .dd,
+header .mega:hover .ref-mega-dd,
+header .mega:focus-within .ref-mega-dd {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* 4. Desktop Mega Dropdown (Default >= 851px) */
+@media (min-width: 851px) {
+  header .mega {
+    position: static !important;
+  }
+
+  header .mega > .dd.ref-mega-dd {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important; /* Exactly below header wrap, never overlapping */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: min(1080px, 95vw) !important;
+    max-width: 1080px !important;
+    max-height: calc(100vh - 110px) !important;
+    overflow-y: auto !important;
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 50px rgba(2, 35, 82, 0.18), 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid #e2e8f0 !important;
+    border-top: 3px solid #059669 !important;
+    padding: 24px 26px !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    z-index: 99999 !important;
+    box-sizing: border-box !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  header .mega.is-open > .dd.ref-mega-dd {
+    display: grid !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    animation: wdDdFadeIn 0.2s ease forwards !important;
+  }
+}
+
+/* 5. Mobile / Tablet Responsive Mega Dropdown (<= 850px) */
+@media (max-width: 850px) {
+  header .mega {
+    position: static !important;
+    width: 100% !important;
+  }
+
+  header .mega-trigger {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 0 !important;
+    font-size: 15px !important;
+  }
+
+  header .mega > .dd.ref-mega-dd {
+    display: none !important;
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 60vh !important;
+    overflow-y: auto !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+    padding: 14px 12px !important;
+    margin: 8px 0 12px 0 !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    box-sizing: border-box !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  header .mega.is-open > .dd.ref-mega-dd {
+    display: grid !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* 6. Columns & Items Typography */
+.mega-col {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.mega-col-title {
+  margin: 0 0 12px 0 !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.1px !important;
+  text-transform: uppercase !important;
+  color: #022352 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  border-bottom: 2px solid #f1f5f9 !important;
+  padding-bottom: 8px !important;
+}
+
+.mega-col:nth-child(1) .mega-col-title {
+  color: #0a4d9c !important;
+  border-bottom-color: #e0f2fe !important;
+}
+.mega-col:nth-child(2) .mega-col-title {
+  color: #0284c7 !important;
+  border-bottom-color: #e0f2fe !important;
+}
+.mega-col:nth-child(3) .mega-col-title {
+  color: #059669 !important;
+  border-bottom-color: #d1fae5 !important;
+}
+
+.mega-links-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+}
+
+.mega-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 6px 8px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: all 0.18s ease !important;
+}
+
+.mega-item:hover {
+  background: linear-gradient(90deg, #f0f7ff 0%, #ecfdf5 100%) !important;
+  transform: translateX(3px) !important;
+}
+
+.mega-item-icon {
+  width: 22px !important;
+  height: 22px !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+  border-radius: 4px !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) !important;
+}
+
+.mega-item-text {
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  line-height: 1.3 !important;
+}
+
+.mega-item:hover .mega-item-text {
+  color: #059669 !important;
+}
+
+@keyframes wdDdFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 6px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
