@@ -5211,6 +5211,73 @@ img {
       </div>
     </div>
   </footer><script src="assets/js/main.js"></script><script src="js/services-toggle.js"></script>
+  <style id="wedo-phone-3col-services">
+@media (max-width: 820px) {
+  header nav.open {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    width: min(340px, 86vw) !important;
+    max-height: calc(100vh - 86px) !important;
+    overflow-y: auto !important;
+    padding: 16px !important;
+  }
+
+  header nav.nav-links .mega {
+    position: relative !important;
+    width: 100% !important;
+  }
+
+  header nav.nav-links .mega > .dd.ref-mega-dd {
+    display: none !important;
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin-top: 8px !important;
+    padding: 12px !important;
+    gap: 14px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 22px rgba(2, 35, 82, 0.1) !important;
+  }
+
+  header nav.nav-links .mega.wd-open > .dd.ref-mega-dd,
+  header nav.nav-links .mega.is-open > .dd.ref-mega-dd {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  header nav.nav-links .mega .mega-col {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+  }
+
+  header nav.nav-links .mega .mega-col-title {
+    margin: 0 0 8px 0 !important;
+    padding-bottom: 6px !important;
+    font-size: 12px !important;
+  }
+
+  header nav.nav-links .mega .mega-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 6px 8px !important;
+  }
+
+  header nav.nav-links .mega .mega-item-icon {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+  }
+}
+</style>
 </body></html>
 
 
