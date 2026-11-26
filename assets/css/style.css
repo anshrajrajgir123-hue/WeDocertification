@@ -2171,5 +2171,5 @@ li:has(.dropdown-menu) {
   background: transparent;
 }
 /* LOGO_FIT_FIX /
-img[src='assets/images/services/custom/'] { object-fit: contain !important; background: #ffffff !important; border-radius: 6px !important; padding: 2px !important; }
-header nav img[src*='assets/images/services/custom/'] { width: 24px !important; height: 24px !important; max-width: 24px !important; max-height: 24px !important; padding: 1px !important; }
+img[src='assets/images/services/new_logos/custom/'] { object-fit: contain !important; background: #ffffff !important; border-radius: 6px !important; padding: 2px !important; }
+header nav img[src*='assets/images/services/new_logos/custom/'] { width: 24px !important; height: 24px !important; max-width: 24px !important; max-height: 24px !important; padding: 1px !important; }
